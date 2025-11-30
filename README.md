@@ -1,7 +1,9 @@
-partus-Tool-Gym Inference Node Setup
+# Apartus-Tool-Gym Inference Nodes Setup
 
 ## Description
 This repository contains files to make it easier to set up inference nodes for Apartus-Tool-Gym.
+
+It uses a fork from the swiss-ai/torrent repo (https://github.com/swiss-ai/torrent/tree/main)
 
 ---
 
@@ -13,7 +15,7 @@ This repository contains files to make it easier to set up inference nodes for A
 2. Follow the command printed at the end of the setup, for example:
 
 ```bash
-srun -A infra01 -t 2:00:00 --export=HF_HOME=/iopsstor/scratch/cscs/[id]/huggingface --environment=./deployment.toml --pty bash
+srun -A infra01 -t 2:00:00 --export=HF_HOME=/iopsstor/scratch/cscs/[ID]/huggingface --environment=./deployment.toml --pty bash
 ```
 
 ## Testing Deployment
@@ -27,7 +29,7 @@ python serving/single-node/submit_job.py --workers 1 --model-path Qwen/Qwen3-Nex
 2. Wait a bit, then monitor the worker error log:
 
 ```bash
-tail -f logs/[job_id]/worker0_node_nid[node_id].err
+tail -f logs/[JOB_ID]/worker0_node_nid[NODE_ID].err
 ```
 
 The server should be ready when it shows:
