@@ -26,6 +26,14 @@ srun -A infra01 -t 2:00:00 --export=HF_HOME=/iopsstor/scratch/cscs/[ID]/huggingf
 python serving/single-node/submit_job.py --workers 1 --model-path Qwen/Qwen3-Next-80B-A3B-Thinking --tp-size 4
 ```
 
+_Note_: This model is not powerful enough and should not be used to generate data. `Qwen/Qwen3-235B-A22B-Thinking-2507` can be used instead. 
+
+```bash
+python serving/single-node/submit_job.py --workers 1 --model-path Qwen/Qwen3-235B-A22B-Thinking-2507 --tp-size 4
+```
+
+
+
 2. Wait a bit, then monitor the worker error log:
 
 ```bash
